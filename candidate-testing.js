@@ -19,14 +19,23 @@ function askQuestion(){
 }
 
 function gradeQuiz(ans){ 
-for (let b=0;b<5;b++){
-if (ans[b].toLowerCase() === correctAnswers[b].toLowerCase()){
-  score = score + 1;
-}else{
-  score = score
-}
-}
-grade = (score/5)*100;
+if (ans[0].toLowerCase() === correctAnswers[0].toLowerCase()){
+  score0 = 1;
+} else {score0 = 0}
+if (ans[1].toLowerCase() === correctAnswers[1].toLowerCase()){
+  score1 = 1;
+} else {score1 = 0}
+if (ans[2].toLowerCase() === correctAnswers[2].toLowerCase()){
+  score2 = 1;
+} else {score2 = 0}
+if (ans[3].toLowerCase() === correctAnswers[3].toLowerCase()){
+  score3 = 1;
+} else {score3 = 0}
+if (ans[4].toLowerCase() === correctAnswers[4].toLowerCase()){
+  score4 = 1;
+} else {score4 = 0}
+score = score0+score1+score2+score3+score4
+grade = ((score/5)*100);
 return grade
 }
 
