@@ -21,7 +21,8 @@ if (candidateAnswers[b].toLowerCase() === correctAnswers[b].toLowerCase()){
   score = score + 1;
 }
 }
-return score
+grade = (score/questions.length)*100;
+return grade
 }
 function runProgram(){
   askForName();
@@ -36,8 +37,7 @@ console.log(`Candidate Name: ${candidateName}\n`);
 for (let a = 0; a<5;a++){
     console.log(`${a+1}\)${questions[a]}\nYour Answer: ${candidateAnswers[a]}\nCorrect Answer: ${correctAnswers[a]}\n`);
   }
-score = gradeQuiz(candidateAnswers);
-grade = (score/questions.length)*100;
+grade = gradeQuiz(candidateAnswers);
 console.log(`>>> Overall Grade: ${grade}% (${score} of 5 responses correct) <<<`);
 if (grade>=80){
   console.log(">>> Status: PASSED <<<");
