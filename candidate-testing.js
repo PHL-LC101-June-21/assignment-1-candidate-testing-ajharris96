@@ -22,7 +22,7 @@ function gradeQuiz(ans){
 if (ans[0].toLowerCase() === correctAnswers[0].toLowerCase()){
   score0 = 1;
 } else {score0 = 0}
-if (ans[1].toLowerCase() === correctAnswers[2].toLowerCase()){
+if (ans[1].toLowerCase() === correctAnswers[1].toLowerCase()){
   score1 = 1;
 } else {score1 = 0}
 if (ans[2].toLowerCase() === correctAnswers[2].toLowerCase()){
