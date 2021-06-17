@@ -62,12 +62,12 @@ describe("Candidate Testing solution", function() {
   // gradeQuiz tests //
   it("gradeQuiz returns a 0 for all wrong answers", function() {
     solution.candidateAnswers = ["foo", "bar", "baz", "lur", "man"];
-    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(60);
+    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(0);
 	});
 
   it("gradeQuiz returns 100 for all correct answers", function() {
     solution.candidateAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
-    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(160);
+    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(100);
 	});
 
   it("gradeQuiz returns 20 for a single correct answer", function() {
@@ -77,22 +77,22 @@ describe("Candidate Testing solution", function() {
 
   it("gradeQuiz returns 40 for two correct answers", function() {
     solution.candidateAnswers = ["Sally Ride", "bar", "baz", "lur", "3"];
-    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(60);
+    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(40);
 	});
 
   it("gradeQuiz returns 60 for three correct answers", function() {
     solution.candidateAnswers = ["Sally Ride", "bar", "40", "lur", "3"];
-    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(320);
+    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(60);
 	});
 
   it("gradeQuiz returns 80 for four correct answers", function() {
     solution.candidateAnswers = ["Sally Ride", "bar", "40", "Trajectory", "3"];
-    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(400);
+    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(80);
 	});
 
   it("gradeQuiz is case insensitive", function() {
     solution.candidateAnswers = ["sally ride", "TRUE", "40", "TrAjEcToRy", "3"];
-    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(260);
+    expect(solution.gradeQuiz(solution.candidateAnswers)).toBe(100);
 	});
 
 	
