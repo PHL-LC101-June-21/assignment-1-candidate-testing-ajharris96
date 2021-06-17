@@ -1,8 +1,8 @@
 const input = require('readline-sync');
-let candidateName;
+let candidateName =" ";
 let question = "Who was the first American woman in space? "
 let correctAnswer = "Sally Ride"
-let candidateAnswer
+let candidateAnswer = " ";
 let score = 0
 let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ", "(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "]
 let correctAnswers = ["Sally Ride",	"true", "40", "Trajectory", "3"]
@@ -15,13 +15,13 @@ function askQuestion(){
   candidateAnswers[x] = input.question(questions[x]);
   x = x+1
 }
-function gradeQuiz(candidateAnswers){ 
+function gradeQuiz(ans){ 
 for (let b=0;b<5;b++){
-if (candidateAnswers[b].toLowerCase() === correctAnswers[b].toLowerCase()){
+if (ans[b].toLowerCase() === correctAnswers[b].toLowerCase()){
   score = score + 1;
 }
 }
-grade = (score/questions.length)*100;
+grade = (score/5)*100;
 return grade
 }
 function runProgram(){
@@ -30,14 +30,12 @@ function runProgram(){
   for (let i = 0; i < (questions.length); i++){
     askQuestion();
   }
-  //grade = gradeQuiz(this.candidateAnswers);
-  //console.log("You " + grade);
 console.clear();
 console.log(`Candidate Name: ${candidateName}\n`);
 for (let a = 0; a<5;a++){
     console.log(`${a+1}\)${questions[a]}\nYour Answer: ${candidateAnswers[a]}\nCorrect Answer: ${correctAnswers[a]}\n`);
   }
-grade = gradeQuiz(candidateAnswers);
+grade = gradeQuiz(this.candidateAnswers);
 console.log(`>>> Overall Grade: ${grade}% (${score} of 5 responses correct) <<<`);
 if (grade>=80){
   console.log(">>> Status: PASSED <<<");
