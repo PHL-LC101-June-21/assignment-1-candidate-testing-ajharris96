@@ -18,25 +18,16 @@ function askQuestion(){
   x = x+1
 }
 
-function gradeQuiz(ans){ 
-if (ans[0].toLowerCase() === correctAnswers[0].toLowerCase()){
-  score0 = 1;
-} else {score0 = 0}
-if (ans[1].toLowerCase() === correctAnswers[1].toLowerCase()){
-  score1 = 1;
-} else {score1 = 0}
-if (ans[2].toLowerCase() === correctAnswers[2].toLowerCase()){
-  score2 = 1;
-} else {score2 = 0}
-if (ans[3].toLowerCase() === correctAnswers[3].toLowerCase()){
-  score3 = 1;
-} else {score3 = 0}
-if (ans[4].toLowerCase() === correctAnswers[4].toLowerCase()){
-  score4 = 1;
-} else {score4 = 0}
-score = score0+score1+score2+score3+score4
-grade = ((score/5)*100);
-return grade
+function gradeQuiz(ans){
+  let score=0
+  for (i=0;i<ans.length;i++){
+    if (ans[i].toLowerCase()=== correctAnswers[i].toLowerCase()){
+    score += 1 
+    } else {
+      score = score
+    }
+  
+  } return score/ans.length *100
 }
 
 function runProgram(){
@@ -49,7 +40,7 @@ function runProgram(){
     console.log(`${a+1}\)${questions[a]}\nYour Answer: ${candidateAnswers[a]}\nCorrect Answer: ${correctAnswers[a]}\n`);
   }
   grade = gradeQuiz(candidateAnswers);
-  console.log(`>>> Overall Grade: ${grade}% (${score} of 5 responses correct) <<<`);
+  console.log(`>>> Overall Grade: ${grade}% (${(grade/100*5)} of 5 responses correct) <<<`);
   if (grade>=80){
    console.log(">>> Status: PASSED <<<");
     } else { 
