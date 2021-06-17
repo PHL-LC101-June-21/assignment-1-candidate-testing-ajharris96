@@ -12,8 +12,8 @@ function askForName(){
   candidateName = input.question("What is your name? ");
 }
 
-let x = 0
 function askQuestion(){
+  for (x=0;x<5;x++)
   candidateAnswers[x] = input.question(questions[x]);
   x = x+1
 }
@@ -31,20 +31,18 @@ return grade
 function runProgram(){
   askForName();
   console.log("Hello, " + candidateName);
-  for (let i = 0; i < (5); i++){
-    askQuestion();
-  }
-console.clear();
-console.log(`Candidate Name: ${candidateName}\n`);
-for (let a = 0; a<5;a++){
+  askQuestion();
+  console.clear();
+  console.log(`Candidate Name: ${candidateName}\n`);
+  for (let a = 0; a<5;a++){
     console.log(`${a+1}\)${questions[a]}\nYour Answer: ${candidateAnswers[a]}\nCorrect Answer: ${correctAnswers[a]}\n`);
   }
-grade = gradeQuiz(candidateAnswers);
-console.log(`>>> Overall Grade: ${grade}% (${score} of 5 responses correct) <<<`);
-if (grade>=80){
-  console.log(">>> Status: PASSED <<<");
-} else { 
-  console.log(">>> Status: FAILED <<<");
+  grade = gradeQuiz(candidateAnswers);
+  console.log(`>>> Overall Grade: ${grade}% (${score} of 5 responses correct) <<<`);
+  if (grade>=80){
+   console.log(">>> Status: PASSED <<<");
+    } else { 
+      console.log(">>> Status: FAILED <<<");
   }
   }
 
