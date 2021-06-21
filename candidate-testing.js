@@ -12,9 +12,9 @@ function askForName(){
 }
 
 function askQuestion(){
-  for (x=0;x<5;x++)
+  for (x=0;x<questions.length;x++){
   candidateAnswers[x] = input.question(questions[x]);
-  x = x+1
+  }
 }
 
 function gradeQuiz(ans){
