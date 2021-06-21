@@ -36,7 +36,7 @@ function runProgram(){
   console.clear();
   console.log(`Candidate Name: ${candidateName}\n`);
   for (let a = 0; a<5;a++){
-    console.log(`${a+1}\)${questions[a]}\nYour Answer: ${candidateAnswers[a]}\nCorrect Answer: ${correctAnswers[a]}\n`);
+    console.log(`${a+1}\) ${questions[a]}\nYour Answer: ${candidateAnswers[a]}\nCorrect Answer: ${correctAnswers[a]}\n`);
   }
   grade = gradeQuiz(candidateAnswers);
   console.log(`>>> Overall Grade: ${grade}% (${(grade/100*5)} of 5 responses correct) <<<`);
